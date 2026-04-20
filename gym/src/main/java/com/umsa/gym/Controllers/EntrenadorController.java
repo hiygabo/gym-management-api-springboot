@@ -6,17 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.umsa.gym.Models.Registro;
-import com.umsa.gym.Repositories.RegistroRepository;
+import com.umsa.gym.Models.Entrenador;
+import com.umsa.gym.Repositories.EntrenadorRepository;
 @RestController
-@RequestMapping("/api/registros")
-public class RegistroController {
+@RequestMapping("/api/Entrenadores")
+public class EntrenadorController {
     @Autowired
-    private RegistroRepository repositorio;
+    private EntrenadorRepository repositorio; 
 
     @GetMapping
-    public List<Registro> getRegistros(){
+    public List<Entrenador> getEntrenadores(){
         return repositorio.findAll();
     }
-    
 }

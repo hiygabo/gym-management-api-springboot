@@ -6,17 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.umsa.gym.Models.Registro;
-import com.umsa.gym.Repositories.RegistroRepository;
+import com.umsa.gym.Models.Categoria;
+import com.umsa.gym.Repositories.CategoriaRepository;
 @RestController
-@RequestMapping("/api/registros")
-public class RegistroController {
+@RequestMapping("/api/categorias")
+public class CategoriaController {
     @Autowired
-    private RegistroRepository repositorio;
+    private CategoriaRepository repositorio;
 
     @GetMapping
-    public List<Registro> getRegistros(){
+    public List<Categoria> getCategorias(){
         return repositorio.findAll();
     }
-    
 }
