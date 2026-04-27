@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 @Data
 @Entity
-@Table(name="PlanSuscripcion")
+@Table(name="PLANSUSCRIPCION")
 public class PlanSuscripcion {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

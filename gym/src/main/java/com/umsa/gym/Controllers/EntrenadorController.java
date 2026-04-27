@@ -7,15 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.umsa.gym.Models.Entrenador;
-import com.umsa.gym.Repositories.EntrenadorRepository;
+import com.umsa.gym.Services.EntrenadorService;
 @RestController
 @RequestMapping("/api/Entrenadores")
 public class EntrenadorController {
     @Autowired
-    private EntrenadorRepository repositorio; 
+    private EntrenadorService servicio; 
 
     @GetMapping
     public List<Entrenador> getEntrenadores(){
-        return repositorio.findAll();
+        return servicio.listarEntrenadores();
     }
+
+    
 }

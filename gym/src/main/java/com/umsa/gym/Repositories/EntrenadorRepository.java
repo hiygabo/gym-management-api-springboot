@@ -6,5 +6,5 @@ import com.umsa.gym.Models.Entrenador;
 
 @Repository
 public interface  EntrenadorRepository extends JpaRepository<Entrenador, Long>{
-    
+    boolean existsByIdEntrenador(Long idEntrenador);
 }

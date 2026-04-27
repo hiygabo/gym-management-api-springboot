@@ -17,5 +17,6 @@ public class Entrenador {
     @Column(name="nombre")
     private String nombreEntrenador;
 
-    
+    @Column(name="turno")
+    private String turno;
 }
