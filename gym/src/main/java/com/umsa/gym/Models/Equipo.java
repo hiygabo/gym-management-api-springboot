@@ -28,4 +28,6 @@ public class Equipo {
     private String marca;
     @Column(name="cantidad", nullable=false)
     private Integer cantidad;
+    @Column(name="estado", nullable=false)
+    private String estado;
 }

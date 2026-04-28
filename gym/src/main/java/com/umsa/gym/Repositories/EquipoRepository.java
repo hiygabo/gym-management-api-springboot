@@ -7,5 +7,5 @@ import com.umsa.gym.Models.Equipo;
 
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {
-    
+    boolean existsByIdMaquina(Long idMaquina);
 }

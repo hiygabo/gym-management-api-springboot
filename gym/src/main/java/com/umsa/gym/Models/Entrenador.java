@@ -19,4 +19,6 @@ public class Entrenador {
 
     @Column(name="turno")
     private String turno;
+    @Column (name="estado")
+    private String estado;
 }

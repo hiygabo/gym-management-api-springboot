@@ -35,6 +35,13 @@ public class EntrenadorService {
 
         return repositorio.save(entrenadorExistente);
     }
+    public void eliminarEntrenador(Long idEntrenador){
+        Entrenador entrenadorExistente = obtenerPorId(idEntrenador);
+
+        entrenadorExistente.setEstado("Inactivo");
+
+        repositorio.save(entrenadorExistente);
+    }
 
     
 }
