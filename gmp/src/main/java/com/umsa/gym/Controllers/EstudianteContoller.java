@@ -2,6 +2,7 @@ package com.umsa.gym.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.umsa.gym.Models.Estudiante;
 import com.umsa.gym.Services.EstudianteService;
 @RestController
 @RequestMapping("/api/estudiantes")
+@CrossOrigin(origins = "http://localhost:5173")
 public class EstudianteContoller {
     @Autowired
     private EstudianteService servicio;
