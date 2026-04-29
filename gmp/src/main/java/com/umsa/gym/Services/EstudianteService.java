@@ -13,7 +13,7 @@ public class EstudianteService {
     @Autowired
     private EstudianteRepository repositorio;
 
-    public List<Estudiante> getEstudiantes(){
+    public List<Estudiante> listarEstudiantes(){
         return repositorio.findAll();
     }
 

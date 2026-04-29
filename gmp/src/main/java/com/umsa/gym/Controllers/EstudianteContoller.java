@@ -21,7 +21,7 @@ public class EstudianteContoller {
 
     @GetMapping
     public List<Estudiante> listarEstduiantes(){
-        return servicio.getEstudiantes();
+        return servicio.listarEstudiantes();
     }
 
     @PostMapping
