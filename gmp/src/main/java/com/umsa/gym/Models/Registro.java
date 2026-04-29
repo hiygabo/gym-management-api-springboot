@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Registro")
+@Table(name = "REGISTRO")
 public class Registro {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

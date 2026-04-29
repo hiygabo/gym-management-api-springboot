@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 @Data
 @Entity
-@Table(name="Equipo")
+@Table(name="EQUIPO")
 public class Equipo {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
