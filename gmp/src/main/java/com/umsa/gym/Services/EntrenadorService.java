@@ -19,6 +19,7 @@ public class EntrenadorService {
         if(repositorio.existsByIdEntrenador(nuevoEntrendador.getIdEntrenador())){
             throw new RuntimeException("Entrendor ya existente");
         }
+        nuevoEntrendador.setEstado("Activo");
         return repositorio.save(nuevoEntrendador);
     }
 

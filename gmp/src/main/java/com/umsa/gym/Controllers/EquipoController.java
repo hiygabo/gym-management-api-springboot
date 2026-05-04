@@ -34,12 +34,12 @@ public class EquipoController {
         return servicio.crearEquipo(equipo);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{idMaquina}")
     public Equipo actualizarEquipo(@PathVariable("id") Long idMaquina, @RequestBody Equipo equipo){
         return servicio.actualizarEquipo(idMaquina, equipo);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idMaquina}")
     public Equipo eliminarEquipo(@PathVariable("id") Long idMaquina){
         return servicio.eliminarEquipo(idMaquina);
     }

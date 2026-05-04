@@ -29,11 +29,11 @@ public class EntrenadorController {
     public Entrenador crearEntrenador(@RequestBody Entrenador entrenador){
         return servicio.crearEntrenador(entrenador);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/{idEntrenador}")
     public Entrenador actualizarEntrenador(@PathVariable Long idEntrenador, @RequestBody Entrenador entrenador){
         return servicio.actualizarEntrenador(idEntrenador, entrenador);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idEntrenador}")
     public void eliminarEntrenador(@PathVariable Long idEntrenador){
         servicio.eliminarEntrenador(idEntrenador);
     }
