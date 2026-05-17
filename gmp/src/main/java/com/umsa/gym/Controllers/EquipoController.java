@@ -35,7 +35,7 @@ public class EquipoController {
     }
 
     @PutMapping("/{idMaquina}")
-    public Equipo actualizarEquipo(@PathVariable("id") Long idMaquina, @RequestBody Equipo equipo){
+    public Equipo actualizarEquipo(@PathVariable("idMaquina") Long idMaquina, @RequestBody Equipo equipo){
         return servicio.actualizarEquipo(idMaquina, equipo);
     }
 
