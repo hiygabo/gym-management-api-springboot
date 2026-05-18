@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,9 +30,13 @@ public class PlanSuscripcionController {
     public PlanSuscripcion crearPlan(@RequestBody PlanSuscripcion planSuscripcion){
         return servicio.crearPlan(planSuscripcion);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/{idPlan}")
     public PlanSuscripcion editarPlan(@PathVariable Long idPlan, @RequestBody PlanSuscripcion planSuscripcion){
         return servicio.actualizarPlan(idPlan, planSuscripcion);
+    }
+    @DeleteMapping("/{idPlan}")
+    public void eliminarPlan(@PathVariable Long idPlan){
+        servicio.eliminarPlan(idPlan);
     }
 
 }

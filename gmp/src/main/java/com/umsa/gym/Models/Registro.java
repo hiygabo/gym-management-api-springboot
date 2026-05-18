@@ -32,4 +32,7 @@ public class Registro {
 
     @Column(name="estado_solicitud")
     private String estadoSolucitud;
+
+    
+
 }

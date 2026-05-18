@@ -31,4 +31,7 @@ public class PlanSuscripcionService {
 
         return repositorio.save(planExistente);
     }
+    public void eliminarPlan(Long idPlan){
+        repositorio.deleteById(idPlan);
+    }
 }
