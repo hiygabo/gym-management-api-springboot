@@ -13,22 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.umsa.gym.Models.Cliente;
-import com.umsa.gym.Services.EstudianteService;
+import com.umsa.gym.Services.ClienteService;
 @RestController
-@RequestMapping("/api/estudiantes")
+@RequestMapping("/api/Clientes")
 @CrossOrigin(origins = "http://localhost:5173")
-public class EstudianteContoller {
+public class ClienteController {
     @Autowired
-    private EstudianteService servicio;
+    private ClienteService servicio;
 
     @GetMapping
-    public List<Cliente> listarEstduiantes(){
-        return servicio.listarEstudiantes();
+    public List<Cliente> listarClientes(){
+        return servicio.listarClientes();
     }
 
     @PostMapping
-    public Cliente guardar(@RequestBody Cliente estudiante){
-        return servicio.guardarEstudiante(estudiante);
+    public Cliente guardar(@RequestBody Cliente cliente){
+        return servicio.guardarCliente(cliente);
     }
 
     @GetMapping("/{id}")
@@ -37,12 +37,12 @@ public class EstudianteContoller {
     }
 
     @PutMapping("/{id}")
-    public Cliente actualizar(@PathVariable Long id, @RequestBody Cliente estudiante){
-        return servicio.actualizarEstudiante(id, estudiante);
+    public Cliente actualizar(@PathVariable("id") Long id, @RequestBody Cliente cliente){
+        return servicio.actualizarCliente(id, cliente);
     }
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Long id){
-        servicio.eliminarEstudiante(id);
+        servicio.eliminarCliente(id);
     }
 }

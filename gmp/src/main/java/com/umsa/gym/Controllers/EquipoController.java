@@ -40,7 +40,7 @@ public class EquipoController {
     }
 
     @DeleteMapping("/{idMaquina}")
-    public Equipo eliminarEquipo(@PathVariable("id") Long idMaquina){
+    public Equipo eliminarEquipo(@PathVariable("idMaquina") Long idMaquina){
         return servicio.eliminarEquipo(idMaquina);
     }
 }

@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.umsa.gym.Models.Estudiante;
+import com.umsa.gym.Models.Cliente;
 import com.umsa.gym.Models.PlanSuscripcion;
 import com.umsa.gym.Models.Suscripcion;
-import com.umsa.gym.Repositories.EstudianteRepository;
+import com.umsa.gym.Repositories.ClienteRepository;
 import com.umsa.gym.Repositories.PlanSuscripcionRepository;
 import com.umsa.gym.Repositories.SuscripcionRepository;
 @Service
@@ -16,7 +16,7 @@ public class SuscripcionService {
     @Autowired
     private SuscripcionRepository suscripcionRepositorio;
     @Autowired
-    private EstudianteRepository estudianteRepositorio;
+    private ClienteRepository clienteRepositorio;
     @Autowired
     private PlanSuscripcionRepository planRepositorio;
 
@@ -26,19 +26,19 @@ public class SuscripcionService {
     }
 
     public Suscripcion crearSuscripcion(Suscripcion nuevaSuscripcion){
-        if(nuevaSuscripcion.getEstudiante() == null || nuevaSuscripcion.getEstudiante().getIdEstudiante() == null){
-            throw new RuntimeException("Suscripcion sin estudiante");
+        if(nuevaSuscripcion.getCliente() == null || nuevaSuscripcion.getCliente().getIdCliente() == null){
+            throw new RuntimeException("Suscripcion sin cliente");
         }
         if(nuevaSuscripcion.getPlanSuscripcion() == null || nuevaSuscripcion.getPlanSuscripcion().getIdPlan() == null){
             throw new RuntimeException("Suscripcion sin plan");
         }
 
-        Long idEst = nuevaSuscripcion.getEstudiante().getIdEstudiante();
-        Estudiante nuevoEstudiante = estudianteRepositorio.findById(idEst).orElseThrow(() -> new RuntimeException("Estudiante inexistente"));
+        Long idCli = nuevaSuscripcion.getCliente().getIdCliente();
+        Cliente nuevoCliente = clienteRepositorio.findById(idCli).orElseThrow(() -> new RuntimeException("Cliente inexistente"));
         Long idPlan = nuevaSuscripcion.getPlanSuscripcion().getIdPlan();
         PlanSuscripcion nuevoPlanSuscripcion = planRepositorio.findById(idPlan).orElseThrow(() -> new RuntimeException("Plan no existente"));
 
-        nuevaSuscripcion.setEstudiante(nuevoEstudiante);
+        nuevaSuscripcion.setCliente(nuevoCliente);
         nuevaSuscripcion.setPlanSuscripcion(nuevoPlanSuscripcion);
         LocalDate hoy = LocalDate.now();
         nuevaSuscripcion.setFechaInicio(hoy);

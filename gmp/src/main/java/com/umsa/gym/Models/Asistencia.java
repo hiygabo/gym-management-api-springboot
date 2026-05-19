@@ -20,8 +20,8 @@ public class Asistencia {
     private Long idAsistencia;
 
     @ManyToOne
-    @JoinColumn(name="id_estudiante", nullable=false)
-    private Estudiante estudiante;
+    @JoinColumn(name="id_cliente", nullable=false)
+    private Cliente cliente;
 
     @Column(name="fecha_hora", nullable=false)
     private LocalDateTime fechaHora;

@@ -21,8 +21,8 @@ public class Suscripcion {
     private Long idSuscripcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_estudiante", nullable=false)
-    private Estudiante estudiante;
+    @JoinColumn(name = "id_cliente", nullable=false)
+    private Cliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "id_plan", nullable=false)

@@ -6,28 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.umsa.gym.Models.Asistencia;
-import com.umsa.gym.Models.Estudiante;
+import com.umsa.gym.Models.Cliente;
 import com.umsa.gym.Repositories.AsistenciaRepository;
-import com.umsa.gym.Repositories.EstudianteRepository;
+import com.umsa.gym.Repositories.ClienteRepository;
 @Service
 public class AsistenciaService {
     @Autowired
     private AsistenciaRepository asistenciaRepositorio;
     @Autowired
-    private EstudianteRepository estudianteRepositorio;
+    private ClienteRepository clienteRepositorio;
 
     public List<Asistencia> listarAsistencias(){
         return asistenciaRepositorio.findAll();
     }
 
     public Asistencia crearAsistencia(Asistencia nuevaAsistencia){
-        if(nuevaAsistencia.getEstudiante() == null || nuevaAsistencia.getEstudiante().getIdEstudiante() ==  null){
-            throw new RuntimeException("sin estudiante asignado");
+        if(nuevaAsistencia.getCliente() == null || nuevaAsistencia.getCliente().getIdCliente() ==  null){
+            throw new RuntimeException("sin cliente asignado");
         }
 
-        Long idEst = nuevaAsistencia.getEstudiante().getIdEstudiante();
-        Estudiante estudianteEncontrado = estudianteRepositorio.findById(idEst).orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
-        nuevaAsistencia.setEstudiante(estudianteEncontrado);
+        Long idCli = nuevaAsistencia.getCliente().getIdCliente();
+        Cliente clienteEncontrado = clienteRepositorio.findById(idCli).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+        nuevaAsistencia.setCliente(clienteEncontrado);
         nuevaAsistencia.setFechaHora(LocalDateTime.now());
         return asistenciaRepositorio.save(nuevaAsistencia);
     }

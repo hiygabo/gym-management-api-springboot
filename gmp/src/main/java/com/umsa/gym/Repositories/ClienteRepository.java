@@ -3,8 +3,8 @@ package com.umsa.gym.Repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.umsa.gym.Models.Registro;
+import com.umsa.gym.Models.Cliente;
 @Repository
-public interface RegistroRepository extends JpaRepository<Registro, Long> {
-    
+public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+    boolean existsByCi(String ci);
 }

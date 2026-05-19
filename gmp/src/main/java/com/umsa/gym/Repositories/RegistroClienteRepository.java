@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.umsa.gym.Models.RegistroCliente;
 @Repository
 public interface  RegistroClienteRepository extends JpaRepository<RegistroCliente, Long>{
-    boolean existsByidRegistro(Long idRegistro);
+    // Use the built-in existsById from JpaRepository; remove custom existsByidRegistro to avoid confusion
 }

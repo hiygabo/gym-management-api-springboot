@@ -15,7 +15,7 @@ import lombok.Data;
 public class DetalleSuscripcion {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id_detallle", nullable=false)
+    @Column(name="id_detalle", nullable=false)
     private Long idDetalle;
 
     @ManyToOne
@@ -23,6 +23,6 @@ public class DetalleSuscripcion {
     private Suscripcion suscripcion;
 
     @ManyToOne
-    @JoinColumn(name="id_entrenador", nullable=false)
+    @JoinColumn(name="id_entrenador", nullable=true)
     private Entrenador entrenador;
 }

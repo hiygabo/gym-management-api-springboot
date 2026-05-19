@@ -4,20 +4,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.umsa.gym.Models.Estudiante;
-import com.umsa.gym.Repositories.EstudianteRepository;
+import com.umsa.gym.Models.Cliente;
+import com.umsa.gym.Repositories.ClienteRepository;
 
 @Service
 public class EstudianteService {
     
     @Autowired
-    private EstudianteRepository repositorio;
+    private ClienteRepository repositorio;
 
-    public List<Estudiante> listarEstudiantes(){
+    public List<Cliente> listarEstudiantes(){
         return repositorio.findAll();
     }
 
-    public Estudiante guardarEstudiante(Estudiante nuevoEstudiante){
+    public Cliente guardarEstudiante(Cliente nuevoEstudiante){
         if(nuevoEstudiante.getEstado() == null || nuevoEstudiante.getEstado().isEmpty()){
             nuevoEstudiante.setEstado("Activo");
         }
@@ -28,12 +28,12 @@ public class EstudianteService {
         return repositorio.save(nuevoEstudiante);
     }
 
-    public Estudiante getPorId(Long id){
+    public Cliente getPorId(Long id){
         return repositorio.findById(id).orElseThrow(() -> new RuntimeException("No existe el estudiante"));
     }
 
-    public Estudiante actualizarEstudiante(Long id, Estudiante datosActualizados){
-        Estudiante estudianteExistente = getPorId(id);
+    public Cliente actualizarEstudiante(Long id, Cliente datosActualizados){
+        Cliente estudianteExistente = getPorId(id);
 
         estudianteExistente.setNombre(datosActualizados.getNombre());
         estudianteExistente.setTelefono(datosActualizados.getTelefono());
@@ -42,7 +42,7 @@ public class EstudianteService {
     }
 
     public void eliminarEstudiante(Long id){
-        Estudiante estudianteExistente = getPorId(id);
+        Cliente estudianteExistente = getPorId(id);
         estudianteExistente.setEstado("Inactivo");
 
         repositorio.save(estudianteExistente);

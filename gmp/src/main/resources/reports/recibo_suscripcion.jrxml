@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="recibo_suscripcion_pro" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e04c0df0-1234-4567-8901-abcdef123456">
+    
+    <parameter name="nombreCliente" class="java.lang.String"/>
+    <parameter name="correoCliente" class="java.lang.String"/>
+    <parameter name="telefonoCliente" class="java.lang.String"/>
+    <parameter name="nombrePlan" class="java.lang.String"/>
+    
+    <title>
+        <band height="90">
+            <rectangle>
+                <reportElement mode="Opaque" x="0" y="0" width="555" height="70" backcolor="#1A237E" uuid="11111111-1111-1111-1111-111111111111"/>
+                <graphicElement>
+                    <pen lineWidth="0.0"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="20" y="15" width="300" height="30" forecolor="#FFFFFF" uuid="22222222-2222-2222-2222-222222222222"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[GIMNASIO UMSA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="45" width="300" height="15" forecolor="#E0E0E0" uuid="33333333-3333-3333-3333-333333333333"/>
+                <textElement>
+                    <font size="10" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Comprobante Oficial de Membresía]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="15" width="185" height="45" forecolor="#FFFFFF" uuid="44444444-4444-4444-4444-444444444444"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="9"/>
+                </textElement>
+                <text><![CDATA[La Paz - Bolivia
+Av. Villazón N° 1999
+www.umsa-gym.com]]></text>
+            </staticText>
+        </band>
+    </title>
+    
+    <detail>
+        <band height="300">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="10" width="555" height="25" backcolor="#F5F5F5" uuid="55555555-5555-5555-5555-555555555555"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                    <paragraph leftIndent="10"/>
+                </textElement>
+                <text><![CDATA[INFORMACIÓN DEL SOCIO]]></text>
+            </staticText>
+            
+            <staticText>
+                <reportElement x="20" y="50" width="100" height="20" uuid="66666666-6666-6666-6666-666666666666"/>
+                <textElement><font size="11" isBold="true"/></textElement>
+                <text><![CDATA[Nombre:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="130" y="50" width="300" height="20" uuid="77777777-7777-7777-7777-777777777777"/>
+                <textElement><font size="11"/></textElement>
+                <textFieldExpression><![CDATA[$P{nombreCliente}]]></textFieldExpression>
+            </textField>
+            
+            <staticText>
+                <reportElement x="20" y="75" width="100" height="20" uuid="88888888-8888-8888-8888-888888888888"/>
+                <textElement><font size="11" isBold="true"/></textElement>
+                <text><![CDATA[Correo:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="130" y="75" width="300" height="20" uuid="99999999-9999-9999-9999-999999999999"/>
+                <textElement><font size="11"/></textElement>
+                <textFieldExpression><![CDATA[$P{correoCliente}]]></textFieldExpression>
+            </textField>
+            
+            <staticText>
+                <reportElement x="20" y="100" width="100" height="20" uuid="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"/>
+                <textElement><font size="11" isBold="true"/></textElement>
+                <text><![CDATA[Teléfono:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="130" y="100" width="300" height="20" uuid="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"/>
+                <textElement><font size="11"/></textElement>
+                <textFieldExpression><![CDATA[$P{telefonoCliente}]]></textFieldExpression>
+            </textField>
+            
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="140" width="555" height="25" backcolor="#F5F5F5" uuid="cccccccc-cccc-cccc-cccc-cccccccccccc"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                    <paragraph leftIndent="10"/>
+                </textElement>
+                <text><![CDATA[DETALLES DE LA SUSCRIPCIÓN]]></text>
+            </staticText>
+            
+            <rectangle radius="10">
+                <reportElement mode="Transparent" x="10" y="180" width="535" height="60" uuid="dddddddd-dddd-dddd-dddd-dddddddddddd"/>
+                <graphicElement><pen lineWidth="1.5" lineColor="#1A237E"/></graphicElement>
+            </rectangle>
+            
+            <staticText>
+                <reportElement x="30" y="190" width="150" height="40" uuid="eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[PLAN ACTIVO:]]></text>
+            </staticText>
+            
+            <textField>
+                <reportElement x="180" y="190" width="340" height="40" forecolor="#1A237E" uuid="ffffffff-ffff-ffff-ffff-ffffffffffff"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{nombrePlan}.toUpperCase()]]></textFieldExpression>
+            </textField>
+            
+            <staticText>
+                <reportElement x="0" y="260" width="555" height="30" forecolor="#757575" uuid="00000000-0000-0000-0000-000000000000"/>
+                <textElement textAlignment="Center" verticalAlignment="Bottom">
+                    <font size="9" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Este documento sirve como comprobante de pago y acceso. 
+¡Gracias por confiar en nosotros y bienvenido a la familia!]]></text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport>
