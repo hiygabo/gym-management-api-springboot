@@ -60,7 +60,7 @@ public class RegistroClienteService {
         nuevoCliente.setMaterno(registro.getMaternoCliente());
         nuevoCliente.setCorreo(registro.getCorreoCliente());
         nuevoCliente.setTelefono(registro.getTelefonoCliente());
-        nuevoCliente.setCi("SIN_CI");
+        nuevoCliente.setCi(registro.getCarnetCliente());
         nuevoCliente.setEstado("Activo");
         Cliente clienteGuardado = repositorioCliente.save(nuevoCliente);
 

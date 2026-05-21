@@ -31,6 +31,8 @@ public class RegistroCliente {
     private String telefonoCliente;
     @Column(name="comprobante") 
     private String comprobante;
+    private String carnetCliente;
+    
     @ManyToOne
     @JoinColumn(name="id_plan", nullable=false)
     private PlanSuscripcion plan;

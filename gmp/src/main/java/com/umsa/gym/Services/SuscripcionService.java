@@ -42,9 +42,8 @@ public class SuscripcionService {
         nuevaSuscripcion.setPlanSuscripcion(nuevoPlanSuscripcion);
         LocalDate hoy = LocalDate.now();
         nuevaSuscripcion.setFechaInicio(hoy);
-        int añoActual = hoy.getYear();
-        LocalDate finDeGestion = LocalDate.of(añoActual, 12, 31);
-        nuevaSuscripcion.setFechaFin(finDeGestion);
+        LocalDate fechaVencimiento = hoy.plusMonths(1);
+        nuevaSuscripcion.setFechaFin(fechaVencimiento);
         return suscripcionRepositorio.save(nuevaSuscripcion);
     }
 }

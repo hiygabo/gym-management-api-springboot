@@ -1,16 +1,13 @@
 package com.umsa.gym.Controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.umsa.gym.Models.Asistencia;
+import com.umsa.gym.DTOs.RespuestaAsistencia;
 import com.umsa.gym.Services.AsistenciaService;
 
 @RestController
@@ -21,13 +18,10 @@ public class AsistenciaController {
     @Autowired
     private AsistenciaService servicio;
 
-    @GetMapping
-    public List<Asistencia> getAsistencias() {
-        return servicio.listarAsistencias();
+    @PostMapping("/marcar")
+    public RespuestaAsistencia marcarAsistencia(@RequestBody String ci) {
+        String ciLimpio = ci.replace("\"", "").trim(); 
+        return servicio.registrarAsistencia(ciLimpio);
     }
 
-    @PostMapping
-    public Asistencia registrarAsistencia(@RequestBody Asistencia asistencia){
-        return servicio.crearAsistencia(asistencia);
-    }
 }

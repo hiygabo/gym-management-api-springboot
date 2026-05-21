@@ -43,7 +43,6 @@ public class DetalleSuscripcionService {
             throw new RuntimeException("Error: Este entrenador ya está asignado a esta suscripción.");
         }
 
-        // 4. Asignar y Guardar
         nuevoDetalle.setSuscripcion(suscripcionEncontrada);
         nuevoDetalle.setEntrenador(entrenadorEncontrado);
 
