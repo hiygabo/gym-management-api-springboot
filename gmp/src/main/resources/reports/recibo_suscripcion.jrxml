@@ -12,7 +12,7 @@
     <title>
         <band height="90">
             <rectangle>
-                <reportElement mode="Opaque" x="0" y="0" width="555" height="70" backcolor="#1A237E" uuid="11111111-1111-1111-1111-111111111111"/>
+                <reportElement mode="Opaque" x="0" y="0" width="555" height="70" backcolor="#18181B" uuid="11111111-1111-1111-1111-111111111111"/>
                 <graphicElement>
                     <pen lineWidth="0.0"/>
                 </graphicElement>
@@ -22,7 +22,7 @@
                 <textElement verticalAlignment="Middle">
                     <font size="22" isBold="true"/>
                 </textElement>
-                <text><![CDATA[GIMNASIO UMSA]]></text>
+                <text><![CDATA[METAL GYM]]></text>
             </staticText>
             <staticText>
                 <reportElement x="20" y="45" width="300" height="15" forecolor="#E0E0E0" uuid="33333333-3333-3333-3333-333333333333"/>
@@ -37,8 +37,8 @@
                     <font size="9"/>
                 </textElement>
                 <text><![CDATA[La Paz - Bolivia
-Av. Villazón N° 1999
-www.umsa-gym.com]]></text>
+Calle Zoilo Flores, Edif. el ZAR Piso 3
+WhatsApp: 62184573]]></text>
             </staticText>
         </band>
     </title>
@@ -46,7 +46,7 @@ www.umsa-gym.com]]></text>
     <detail>
         <band height="300">
             <staticText>
-                <reportElement mode="Opaque" x="0" y="10" width="555" height="25" backcolor="#F5F5F5" uuid="55555555-5555-5555-5555-555555555555"/>
+                <reportElement mode="Opaque" x="0" y="10" width="555" height="25" backcolor="#E4E4E7" uuid="55555555-5555-5555-5555-555555555555"/>
                 <textElement verticalAlignment="Middle">
                     <font size="12" isBold="true"/>
                     <paragraph leftIndent="10"/>
@@ -88,7 +88,7 @@ www.umsa-gym.com]]></text>
             </textField>
             
             <staticText>
-                <reportElement mode="Opaque" x="0" y="140" width="555" height="25" backcolor="#F5F5F5" uuid="cccccccc-cccc-cccc-cccc-cccccccccccc"/>
+                <reportElement mode="Opaque" x="0" y="140" width="555" height="25" backcolor="#E4E4E7" uuid="cccccccc-cccc-cccc-cccc-cccccccccccc"/>
                 <textElement verticalAlignment="Middle">
                     <font size="12" isBold="true"/>
                     <paragraph leftIndent="10"/>
@@ -98,7 +98,7 @@ www.umsa-gym.com]]></text>
             
             <rectangle radius="10">
                 <reportElement mode="Transparent" x="10" y="180" width="535" height="60" uuid="dddddddd-dddd-dddd-dddd-dddddddddddd"/>
-                <graphicElement><pen lineWidth="1.5" lineColor="#1A237E"/></graphicElement>
+                <graphicElement><pen lineWidth="1.5" lineColor="#2563EB"/></graphicElement>
             </rectangle>
             
             <staticText>
@@ -110,7 +110,7 @@ www.umsa-gym.com]]></text>
             </staticText>
             
             <textField>
-                <reportElement x="180" y="190" width="340" height="40" forecolor="#1A237E" uuid="ffffffff-ffff-ffff-ffff-ffffffffffff"/>
+                <reportElement x="180" y="190" width="340" height="40" forecolor="#2563EB" uuid="ffffffff-ffff-ffff-ffff-ffffffffffff"/>
                 <textElement verticalAlignment="Middle">
                     <font size="18" isBold="true"/>
                 </textElement>

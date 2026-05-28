@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll() // Aquí pondremos el endpoint para hacer Login
                 .requestMatchers("/api/asistencia/marcar").permitAll() // El kiosko de recepción
                 .requestMatchers("/api/registros/**").permitAll() // ¡Ajusta esta ruta a la de tu formulario de inscripción de clientes!
-                
+                .requestMatchers("/api/planes/**").permitAll() // <-- ¡AÑADE ESTA LÍNEA!
                 // Todo el resto de la aplicación (Clientes, Entrenadores, etc.) está BAJO LLAVE
                 .anyRequest().authenticated()
             )
