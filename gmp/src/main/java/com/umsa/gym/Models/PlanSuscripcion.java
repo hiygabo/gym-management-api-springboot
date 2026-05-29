@@ -17,4 +17,10 @@ public class PlanSuscripcion {
 
     @Column(name="nombre")
     private String nombrePlan;
+
+    @Column(name="precio")
+    private Integer precio;
+
+    @Column(name="descripcion")
+    private String descripcion;
 }

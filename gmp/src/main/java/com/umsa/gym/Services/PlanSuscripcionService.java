@@ -28,6 +28,8 @@ public class PlanSuscripcionService {
     public PlanSuscripcion actualizarPlan(Long idPlan, PlanSuscripcion datosActualizados){
         PlanSuscripcion planExistente = obtenerPorId(idPlan);
         planExistente.setNombrePlan(datosActualizados.getNombrePlan());
+        planExistente.setPrecio(datosActualizados.getPrecio());
+        planExistente.setDescripcion(datosActualizados.getDescripcion());
 
         return repositorio.save(planExistente);
     }
