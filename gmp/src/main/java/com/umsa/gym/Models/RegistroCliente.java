@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
@@ -35,5 +36,6 @@ public class RegistroCliente {
     
     @ManyToOne
     @JoinColumn(name="id_plan", nullable=false)
+    @ToString.Exclude
     private PlanSuscripcion plan;
 }

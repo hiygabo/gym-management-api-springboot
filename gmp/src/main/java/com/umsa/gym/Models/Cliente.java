@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
@@ -46,10 +47,12 @@ public class Cliente {
     private String estado;
 
     @JsonIgnore
+    @ToString.Exclude
     @OneToMany(mappedBy="cliente")
     private List<Suscripcion> suscripciones;
 
-    @JsonIgnore 
+    @JsonIgnore
+    @ToString.Exclude
     @OneToMany(mappedBy = "cliente")
     private List<Asistencia> asistencias;
 }

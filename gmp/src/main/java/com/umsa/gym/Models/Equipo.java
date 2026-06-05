@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 @Data
 @Entity
 @Table(name="EQUIPO")
@@ -20,6 +21,7 @@ public class Equipo {
 
     @ManyToOne
     @JoinColumn(name="id_categoria", nullable=false)
+    @ToString.Exclude
     private Categoria categoria;
 
     @Column(name="nombre", nullable=false)
